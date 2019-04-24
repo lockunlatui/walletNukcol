@@ -2,7 +2,7 @@
  * @Author: Do Loc - doxuanloc2016@gmail.com 
  * @Date: 2019-04-23 11:48:52 
  * @Last Modified by: Do Loc - doxuanloc2016@gmail.com
- * @Last Modified time: 2019-04-23 19:07:02
+ * @Last Modified time: 2019-04-24 15:33:23
  */
 
 import React from 'react';
@@ -42,8 +42,8 @@ class ManageCards extends React.Component {
   render() {
     return (
       <Block flex={1} backgroundColor="#00028c">
-        <Block style={styles.slideCardContainer} backgroundColor="#3335a3" flex={4.5}>
-          <ScrollView   scrollEventThrottle={10} onScroll={this.handleScroll} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollViewCard} horizontal={true}>
+        <Block style={styles.slideCardContainer} backgroundColor="#3335a3" flex={4}>
+          <ScrollView style={{ flexGrow: 0.8 }} scrollEventThrottle={10} onScroll={this.handleScroll} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollViewCard} horizontal={true}>
             {mockCards.map((mockCard) => {
               return (
                 <Block key={mockCard.id}>
@@ -72,13 +72,13 @@ class ManageCards extends React.Component {
             })}
           </Block>
         </Block>
-        <Block middle center flex={5.5}>
-        <Block style={styles.btnManageContainer} middle center>
+        <Block flex={1} style={styles.btnManageContainer} middle center>
         <TouchableOpacity style={styles.buttonManage}>
             <MaterialIcons style={styles.iconCard} name="credit-card" size={24} color="white" />
-            <Typography color="#fff" bold subtitle1>Manage Your Cards</Typography>
+            <Typography color="#fff" bold body>Manage Your Cards</Typography>
         </TouchableOpacity>
         </Block>
+        <Block middle center flex={5}>
         <ScrollView>
             {mockDataTransactions.map((list) => {
               return (
@@ -110,14 +110,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   indicatorDot: {
-    width: width * 0.025,
-    height: width * 0.025,
+    width: width * 0.02,
+    height: width * 0.02,
     borderRadius: 999,
     marginHorizontal: width * 0.02,
-    marginBottom: width * 0.15
+    top: width * 0.01
   },
   btnManageContainer: {
-    bottom: width * 0.1
+   bottom: width * 0.06
   },
   buttonManage: {
     width: width * 0.9,

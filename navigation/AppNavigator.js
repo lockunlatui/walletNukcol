@@ -2,7 +2,7 @@
  * @Author: Do Loc - doxuanloc2016@gmail.com
  * @Date: 2019-04-07 15:56:09
  * @Last Modified by: Do Loc - doxuanloc2016@gmail.com
- * @Last Modified time: 2019-04-23 19:07:30
+ * @Last Modified time: 2019-04-24 16:30:42
  */
 import React from 'react';
 import { Dimensions } from 'react-native';

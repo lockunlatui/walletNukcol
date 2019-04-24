@@ -2,12 +2,12 @@
  * @Author: Do Loc - doxuanloc2016@gmail.com 
  * @Date: 2019-04-23 12:33:48 
  * @Last Modified by: Do Loc - doxuanloc2016@gmail.com
- * @Last Modified time: 2019-04-23 18:38:36
+ * @Last Modified time: 2019-04-24 15:34:57
  */
 
 import React from 'react';
 import { StyleSheet, Dimensions, Image } from 'react-native'; 
-import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import Block from '../components/Block';
 import Typography from './Typography';
@@ -25,11 +25,11 @@ class Card extends React.Component {
     return (
       <Block middle style={[styles.cardsContainer, { backgroundColor: `${this.props.cardColor}` }]}>
       <Block style={[styles.borderInCard, {  borderColor: `${this.props.borderColor}`,}]} />
-          <MaterialCommunityIcons style={styles.marginVertical} name="react" size={24} color="yellow" />
-          <Typography style={styles.marginDate} letterSpacing={2} bold color="#fff" subtitle1>{this.props.number}</Typography>
+          <MaterialCommunityIcons style={styles.marginVertical} name="react" size={14} color="yellow" />
+          <Typography style={styles.marginDate} letterSpacing={2} bold color="#fff" body>{this.props.number}</Typography>
           <Typography bold style={styles.marginDate} color="#fff" caption>{this.props.date}</Typography>
           <Block style={styles.marginVertical} row>
-            <Typography style={styles.nameCard} bold body1 color={this.props.color}>{this.props.name}</Typography>
+            <Typography style={styles.nameCard} bold body color={this.props.color}>{this.props.name}</Typography>
             <Image style={styles.visaIcon} source={VisaIcon} />
           </Block>
       </Block>
@@ -40,11 +40,11 @@ class Card extends React.Component {
 const styles = StyleSheet.create({
   cardsContainer: {
     position: 'relative',
-    width: width * 0.6,
+    width: width * 0.65,
     height: width * 0.4,
     marginHorizontal: width * 0.02,
     paddingHorizontal: width * 0.04,
-    borderRadius:  width * 0.02
+    borderRadius:  10
   },
   borderInCard:{
     position: 'absolute',
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     height: width * 0.05,
   },
   marginVertical: {
-    marginVertical: width * 0.02
+    marginVertical: width * 0.01
   },
   marginDate:{
     marginVertical: width * 0.005

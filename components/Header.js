@@ -29,7 +29,7 @@ class Header extends React.Component {
           <MaterialIcons name="keyboard-backspace" size={24} color="white" />
         </TouchableOpacity>
         <Block middle center style={styles.titleContainer}>
-          <Typography subtitle1 color="#fff" bold>{this.props.titleName}</Typography>
+          <Typography subtitle color="#fff" bold>{this.props.titleName}</Typography>
         </Block>
       </Block></Block>
     )

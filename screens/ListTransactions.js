@@ -2,7 +2,7 @@
  * @Author: Do Loc - doxuanloc2016@gmail.com 
  * @Date: 2019-04-22 01:31:47 
  * @Last Modified by: Do Loc - doxuanloc2016@gmail.com
- * @Last Modified time: 2019-04-22 15:43:49
+ * @Last Modified time: 2019-04-24 15:31:53
  */
 
 import React from 'react';
@@ -31,11 +31,11 @@ class ListTransactions extends React.Component {
             name={this.props.nameIcon} size={14} color="white" />
         </Block>
         <Block style={styles.inforTransactions}>
-          <Typography regular subtitle1 color="#fff">{this.props.name}</Typography>
+          <Typography regular body color="#fff">{this.props.name}</Typography>
           <Typography regular caption color="#8081c6">{this.props.time}</Typography>
         </Block>
         <Block style={styles.priceTransactions}>
-          <Typography regular subtitle1 color="#fff">{this.props.price} USD</Typography>
+          <Typography regular body color="#fff">{this.props.price} USD</Typography>
         </Block>
       </Block>
     )
