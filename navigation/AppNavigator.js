@@ -5,43 +5,47 @@
  * @Last Modified time: 2019-04-24 16:30:42
  */
 import React from 'react';
-import { Dimensions } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from "react-navigation";
-import { Foundation, MaterialCommunityIcons
-} from 'react-native-vector-icons';
+import { Dimensions } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Foundation } from "react-native-vector-icons";
 
-import HomeStack from "./HomeStack";
-import ManageCardStack from './ManageCardStack';
+import HomeScreen from "../screens/Home";
+import ManageCardsScreen from  '../screens/ManageCards';
 
-const { height, width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
-const TabNavigator = createBottomTabNavigator({
-  Home: HomeStack,
-  ManageCards: ManageCardStack,
-},{
-    defaultNavigationOptions:({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        if (routeName === 'Home') {
-          iconName = `thumbnails${focused ? '' : ''}`;
-          return  <Foundation name={iconName} size={24} color={tintColor} />;
-        } else if (routeName === 'ManageCards') {
-          iconName = `credit-card`;
-          return  <MaterialCommunityIcons
-          name={iconName} size={24} color={tintColor} />;
-        }
-      }
-    }),
-  tabBarOptions: {
-    showLabel : false,
-    activeTintColor: '#00028c',
-    inactiveTintColor: '#070d59',
-  style: {
-    height: width * 0.15,
-    marginRight: width * 0.4,
-  }
+const Tab = createBottomTabNavigator();
+
+export default function AppNavigator() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color }) => {
+            let iconName;
+            if (route.name === "Home") {
+              iconName = `thumbnails${focused ? "" : ""}`;
+            } else if (route.name === "ManageCards") {
+              iconName = `credit-card`;
+            }
+            return <Foundation name={iconName} size={24} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          showLabel: false,
+          activeTintColor: "#00028c",
+          inactiveTintColor: "#070d59",
+          style: {
+            height: width * 0.15,
+            marginRight: width * 0.4,
+            elevation: 0,
+          },
+        }}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="ManageCards" component={ManageCardsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 }
-});
-
-export default createAppContainer(TabNavigator);

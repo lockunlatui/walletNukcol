@@ -3,7 +3,6 @@
     "name": "Nukcol Wallet",
     "slug": "nukcol-wallet",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
@@ -24,6 +23,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.nukcol.wallet"
     },
     "description": ""
   }
